@@ -1,0 +1,29 @@
+﻿<div class="container">
+    <h2>Book List</h2>
+    <div ng-controller="booklistcontroller">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Book Name</th>
+                    <th>Author Name</th>
+                    <th>Serial No</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="book in books track by $index">
+                    <td>{{book.bookname}}</td>
+                    <td>{{book.authorname}}</td>
+                    <td>{{book.serialno}}</td>
+                    <!--<td>{{book.description}}</td>-->
+
+                    <td class="cus-button">
+                        <button type="button"  ng-click="editbook(book)" class="btn btn-success">Edit</button>
+                        <button type="button" ng-click="deletebook(book.id)" class="btn btn-danger">Delete</button>
+                        <button type="button" ng-click="viewdetail(book)" class="btn btn-info">Details</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

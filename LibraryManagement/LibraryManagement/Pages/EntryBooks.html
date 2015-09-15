@@ -1,0 +1,54 @@
+﻿
+<div class="container">
+    <h2>Entry Book</h2>
+    <div ng-controller="entrybookcontroller">
+        <form name="newbookform" novalidate class="form-horizontal" role="form">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="bookname">Book Name:</label>
+                <div class="col-sm-10">
+                    <input name="bookname" type="text" ng-model="book.bookname" required class="form-control" placeholder="Enter Book Name" autocomplete="off">
+                    <span style="color:red" ng-show="newbookform.bookname.$dirty && newbookform.bookname.$invalid">
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="authorname">Author Name:</label>
+                <div class="col-sm-10">
+
+                    <input name="authorname" type="text" ng-model="book.authorname" required class="form-control" placeholder="Enter Author Name" autocomplete="off">
+                    <span style="color:red" ng-show="newbookform.authorname.$dirty && newbookform.authorname.$invalid">
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="serialno">Book's Serial No:</label>
+                <div class="col-sm-10">
+
+                    <input name="serialno" type="text" ng-model="book.serialno" length="100" required class="form-control" placeholder="Enter Book's Serial No" autocomplete="off">
+                    <span style="color:red" ng-show="newbookform.serialno.$dirty && newbookform.serialno.$invalid">
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="description">Description:</label>
+                <div class="col-sm-10">
+                    <textarea name="description" type="text" ng-model="book.description" length="250" class="form-control" placeholder="Enter Description" > </textarea>
+
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button class="btn btn-success" ng-disabled="newbookform.bookname.$dirty && newbookform.bookname.$invalid ||
+			  newbookform.authorname.$dirty && newbookform.authorname.$invalid ||
+			  newbookform.serialno.$dirty && newbookform.serialno.$invalid"
+                            type="submit" ng-click="savebook(book)">
+                        Create
+                    </button>
+                    <button class="btn btn-info" type="submit" ng-click="closebook(book)">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div ng-include="'Pages/BookList.html'"></div>

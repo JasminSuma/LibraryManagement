@@ -1,0 +1,25 @@
+﻿h2{
+    color:green!important;
+}
+td{
+    width:100px;
+    word-wrap:break-word;
+}
+
+td.cus-button{
+    width:107px;
+}
+
+.table>thead>tr>th{
+    background-color:cornsilk;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td,
+tr.found{
+    background-color:lightgray;
+}
+
+.table-striped>tbody>tr:nth-child(even)>td,
+tr.found{
+    background-color:darkgray;
+}
